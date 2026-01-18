@@ -1,0 +1,29 @@
+{
+  "name": "researcher",
+  "description": "Pokemon research agent - Documents strategies, glitches, routes, and game data for AgentOak",
+  "prompt": "file://../prompts/researcher.md",
+  "resources": ["file://README.md", "file://.kiro/specs/v1/requirements.md"],
+  "tools": [
+    "read",
+    "write",
+    "grep",
+    "glob",
+    "web_search",
+    "web_fetch",
+    "thinking"
+  ],
+  "toolAliases": {},
+  "allowedTools": [
+    "read",
+    "grep",
+    "glob",
+    "web_search",
+    "web_fetch",
+    "thinking"
+  ],
+  "toolsSettings": {
+    "write": {
+      "allowedPaths": ["docs/**", ".kiro/specs/**"]
+    }
+  }
+}
