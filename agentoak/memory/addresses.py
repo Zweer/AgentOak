@@ -28,10 +28,17 @@ POKEDEX_OWNED = 0xD2F7  # Bitfield of owned Pokémon (19 bytes)
 POKEDEX_SEEN = 0xD30A   # Bitfield of seen Pokémon (19 bytes)
 
 # Player
-PLAYER_X = 0xD362  # X coordinate
-PLAYER_Y = 0xD361  # Y coordinate
-MAP_ID = 0xD35E    # Current map ID
-BADGES = 0xD356    # Badge bitfield
+PLAYER_NAME = 0xD158  # Player name (up to 11 bytes, terminated by 0x50)
+PLAYER_X = 0xD362     # X coordinate
+PLAYER_Y = 0xD361     # Y coordinate
+MAP_ID = 0xD35E       # Current map ID
+BADGES = 0xD356       # Badge bitfield
+MONEY = 0xD347        # Money (3 bytes, BCD format)
+
+# Play time
+PLAY_TIME_HOURS = 0xDA40    # Hours (2 bytes, big-endian)
+PLAY_TIME_MINUTES = 0xDA42  # Minutes (1 byte)
+PLAY_TIME_SECONDS = 0xDA44  # Seconds (1 byte)
 
 # Battle
 IN_BATTLE = 0xD057           # 0 = not in battle, >0 = in battle

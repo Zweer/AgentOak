@@ -30,10 +30,7 @@ class GameBoyEmulator:
         self.pyboy = PyBoy(str(self.rom_path), window=window)
         
         # Try to get game wrapper if available
-        try:
-            self.game_wrapper = self.pyboy.game_wrapper
-        except AttributeError:
-            self.game_wrapper = None
+        self.game_wrapper = getattr(self.pyboy, "game_wrapper", None)
         
     def tick(self, count: int = 1) -> None:
         """Advance emulation by N frames."""

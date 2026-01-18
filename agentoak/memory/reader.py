@@ -146,3 +146,43 @@ def read_badge_count(emulator: GameBoyEmulator) -> int:
     """Count number of badges obtained."""
     badges = emulator.read_memory(addresses.BADGES)[0]
     return bin(badges).count("1")
+
+
+def read_player_name(emulator: GameBoyEmulator) -> str:
+    """Read player name."""
+    name_bytes = emulator.read_memory(addresses.PLAYER_NAME, 11)
+    
+    # Character map (simplified, common chars)
+    char_map = {
+        0x80: "A", 0x81: "B", 0x82: "C", 0x83: "D", 0x84: "E", 0x85: "F", 0x86: "G",
+        0x87: "H", 0x88: "I", 0x89: "J", 0x8A: "K", 0x8B: "L", 0x8C: "M", 0x8D: "N",
+        0x8E: "O", 0x8F: "P", 0x90: "Q", 0x91: "R", 0x92: "S", 0x93: "T", 0x94: "U",
+        0x95: "V", 0x96: "W", 0x97: "X", 0x98: "Y", 0x99: "Z",
+        0xA0: "a", 0xA1: "b", 0xA2: "c", 0xA3: "d", 0xA4: "e", 0xA5: "f", 0xA6: "g",
+        0xA7: "h", 0xA8: "i", 0xA9: "j", 0xAA: "k", 0xAB: "l", 0xAC: "m", 0xAD: "n",
+        0xAE: "o", 0xAF: "p", 0xB0: "q", 0xB1: "r", 0xB2: "s", 0xB3: "t", 0xB4: "u",
+        0xB5: "v", 0xB6: "w", 0xB7: "x", 0xB8: "y", 0xB9: "z",
+    }
+    
+    result = []
+    for byte in name_bytes:
+        if byte == 0x50:  # Terminator
+            break
+        result.append(char_map.get(byte, "?"))
+    return "".join(result)
+
+
+def read_money(emulator: GameBoyEmulator) -> int:
+    """Read money (BCD format)."""
+    money_bytes = emulator.read_memory(addresses.MONEY, 3)
+    b1, b2, b3 = money_bytes
+    return (b1 >> 4) * 100000 + (b1 & 0xF) * 10000 + (b2 >> 4) * 1000 + (b2 & 0xF) * 100 + (b3 >> 4) * 10 + (b3 & 0xF)
+
+
+def read_play_time(emulator: GameBoyEmulator) -> dict[str, int]:
+    """Read play time."""
+    time_bytes = emulator.read_memory(addresses.PLAY_TIME_HOURS, 5)
+    hours = (time_bytes[0] << 8) | time_bytes[1]
+    minutes = time_bytes[2]
+    seconds = time_bytes[3]
+    return {"hours": hours, "minutes": minutes, "seconds": seconds}

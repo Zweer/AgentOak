@@ -48,17 +48,54 @@ pygame
 git clone https://github.com/Zweer/AgentOak.git
 cd AgentOak
 
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# or: venv\Scripts\activate  # Windows
+# Install with uv (recommended)
+uv sync
 
-# Install dependencies
-pip install -r requirements.txt
+# Or with pip
+pip install -e .
 
 # Add your ROMs
 mkdir -p roms
-# Copy pokemon_blue.gb and pokemon_red.gb to roms/
+# Copy pokemon-blue.gb and pokemon-red.gb to roms/
+```
+
+## Development
+
+```bash
+# Install dev dependencies
+uv sync --extra dev
+
+# Run tests
+make test
+
+# Run linter
+make lint
+
+# Format code
+make format
+```
+
+### Creating Test Fixtures
+
+Test fixtures are save states with corresponding JSON specifications for regression testing.
+
+```bash
+# 1. Play manually and create a save state
+uv run python scripts/play_manual.py
+
+# Press Ctrl+C when ready, choose 'y' for test mode
+# This creates a .state file in tests/fixtures/
+
+# 2. Extract test specification
+uv run python scripts/extract_test_spec.py tests/fixtures/your_save.state "Description"
+
+# This generates your_save.json with:
+# - Player state (name, money, time, position, badges)
+# - Party Pokémon (stats, moves, IVs)
+# - Collision data
+
+# 3. Tests run automatically for all .state files in tests/fixtures/
+make test
 ```
 
 ## Usage
@@ -106,39 +143,33 @@ python -m agentoak --load-state saves/checkpoint.state
 
 ## Roadmap
 
-### v0.1 - Foundation (Current)
-- [ ] PyBoy integration
-- [ ] Memory reader (party, Pokédex, position)
-- [ ] Basic input controller
-- [ ] Single game loop
+### v0 - Pilot (Current)
+- [x] PyBoy integration (headless + display modes)
+- [x] Memory reader (party, Pokédex, player state, money, time)
+- [x] Input controller (button press with frame control)
+- [x] Save/load state functionality
+- [x] Screenshot capture
+- [x] Collision detection (walkable matrix)
+- [x] Test infrastructure with fixtures
+- [x] 100% test coverage
 
-### v0.2 - Navigation & Battle
+### v1 - Full Pokédex Completion
 - [ ] Map navigation (A* pathfinding)
 - [ ] Battle system (attack, catch, run)
 - [ ] Wild Pokémon encounters
-
-### v0.3 - Story Progression
 - [ ] Badge collection
 - [ ] HM usage (Cut, Surf, Strength, Flash)
 - [ ] Key item management
-
-### v0.4 - Pokédex Completion (Single Version)
 - [ ] Catch all available Pokémon in one version
 - [ ] Evolution handling (level, stones)
 - [ ] Safari Zone strategy
-
-### v0.5 - Glitches
 - [ ] Mew glitch (Trainer-Fly)
 - [ ] Item duplication (MissingNo) - optional
-
-### v0.6 - Trading
 - [ ] Dual PyBoy instances
 - [ ] Link cable emulation
 - [ ] Trade protocol
 - [ ] Version-exclusive exchanges
 - [ ] Trade evolutions (Alakazam, Gengar, Machamp, Golem)
-
-### v1.0 - Complete Pokédex
 - [ ] Full 151 Pokémon
 - [ ] Dashboard with live view
 - [ ] Progress persistence

@@ -7,7 +7,14 @@ from pathlib import Path
 
 from agentoak.data import get_map_name, get_move_name, get_pokemon_name
 from agentoak.emulator import GameBoyEmulator
-from agentoak.memory import read_badge_count, read_full_party, read_player_position
+from agentoak.memory import (
+    read_badge_count,
+    read_full_party,
+    read_money,
+    read_play_time,
+    read_player_name,
+    read_player_position,
+)
 
 
 def extract_spec(save_path: str, description: str = "") -> dict:
@@ -19,6 +26,9 @@ def extract_spec(save_path: str, description: str = "") -> dict:
     emu.tick(60)
     
     # Read player state
+    name = read_player_name(emu)
+    money = read_money(emu)
+    time = read_play_time(emu)
     map_id, x, y = read_player_position(emu)
     badges = read_badge_count(emu)
     
@@ -61,6 +71,9 @@ def extract_spec(save_path: str, description: str = "") -> dict:
     spec = {
         "description": description or f"Test save at {get_map_name(map_id)}",
         "player": {
+            "name": name,
+            "money": money,
+            "play_time": time,
             "map_id": map_id,
             "map_name": get_map_name(map_id),
             "x": x,

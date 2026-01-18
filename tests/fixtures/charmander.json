@@ -1,46 +1,46 @@
 {
-  "description": "Starter Bulbasaur in Oak's Lab",
+  "description": "Starter Charmander in Oak's Lab",
   "player": {
     "name": "BLUE",
-    "money": 3000,
+    "money": 3175,
     "play_time": {
       "hours": 0,
       "minutes": 0,
-      "seconds": 2
+      "seconds": 4
     },
     "map_id": 40,
     "map_name": "Oak's Lab",
     "x": 5,
-    "y": 6,
+    "y": 8,
     "badges": 0
   },
   "party": [
     {
-      "species_id": 153,
-      "name": "Bulbasaur",
-      "level": 5,
-      "current_hp": 21,
-      "max_hp": 21,
-      "attack": 10,
-      "defense": 10,
-      "speed": 10,
+      "species_id": 176,
+      "name": "Charmander",
+      "level": 6,
+      "current_hp": 22,
+      "max_hp": 22,
+      "attack": 12,
+      "defense": 11,
+      "speed": 14,
       "special": 12,
       "moves": [
-        33,
+        10,
         45,
         0,
         0
       ],
       "move_names": [
-        "Tackle",
+        "Scratch",
         "Growl",
         null,
         null
       ],
       "ivs": {
-        "attack": 3,
-        "defense": 5,
-        "speed": 9,
+        "attack": 11,
+        "defense": 7,
+        "speed": 14,
         "special": 13
       }
     }

@@ -3,11 +3,22 @@
 import json
 from pathlib import Path
 
+import numpy as np
 import pytest
 
 from agentoak.data import get_map_name, get_move_name, get_pokemon_name
 from agentoak.emulator import GameBoyEmulator
-from agentoak.memory import read_badge_count, read_full_party, read_player_position
+from agentoak.memory import (
+    is_pokemon_owned,
+    read_badge_count,
+    read_full_party,
+    read_money,
+    read_party_pokemon,
+    read_play_time,
+    read_player_name,
+    read_player_position,
+    read_pokedex_owned_count,
+)
 
 
 def load_test_spec(name: str) -> dict:
@@ -26,8 +37,9 @@ def load_save_state(name: str) -> GameBoyEmulator:
     return emu
 
 
-# Parametrize tests with all available save states
-SAVE_STATES = ["bulbasaur"]  # Add more as we create them
+# Discover all save states dynamically
+FIXTURES_DIR = Path(__file__).parent / "fixtures"
+SAVE_STATES = [f.stem for f in FIXTURES_DIR.glob("*.state")]
 
 
 @pytest.fixture(params=SAVE_STATES)
@@ -62,7 +74,36 @@ def test_badges(save_state):
     expected = spec["player"]["badges"]
     
     badges = read_badge_count(emu)
-    assert badges == expected, f"Should have {expected} badges"
+    assert badges == expected
+
+
+def test_player_name(save_state):
+    """Test reading player name."""
+    emu, spec = save_state
+    expected = spec["player"]["name"]
+    
+    name = read_player_name(emu)
+    assert name == expected
+
+
+def test_money(save_state):
+    """Test reading money."""
+    emu, spec = save_state
+    expected = spec["player"]["money"]
+    
+    money = read_money(emu)
+    assert money == expected
+
+
+def test_play_time(save_state):
+    """Test reading play time."""
+    emu, spec = save_state
+    expected = spec["player"]["play_time"]
+    
+    time = read_play_time(emu)
+    assert time["hours"] == expected["hours"]
+    assert time["minutes"] == expected["minutes"]
+    assert time["seconds"] == expected["seconds"]
 
 
 def test_party_pokemon(save_state):
@@ -151,3 +192,94 @@ def test_screenshot(save_state, tmp_path):
     
     assert screenshot_path.exists(), "Screenshot file should be created"
     assert screenshot_path.stat().st_size > 0, "Screenshot should not be empty"
+
+
+def test_rom_not_found():
+    """Test ROM file not found error."""
+    with pytest.raises(FileNotFoundError):
+        GameBoyEmulator("nonexistent.gb", headless=True)
+
+
+def test_save_and_load_state(tmp_path):
+    """Test save/load state."""
+    emu = GameBoyEmulator("roms/pokemon-blue.gb", headless=True)
+    save_path = Path(__file__).parent / "fixtures" / "bulbasaur.state"
+    emu.load_state(str(save_path))
+    emu.tick(60)
+    
+    # Save current state
+    state_path = tmp_path / "test.state"
+    emu.save_state(state_path)
+    assert state_path.exists()
+    
+    # Read position before
+    pos_before = read_player_position(emu)
+    
+    # Move and change state
+    emu.press_button("down", frames=16)
+    emu.tick(10)
+    pos_after = read_player_position(emu)
+    assert pos_after != pos_before
+    
+    # Load state back
+    emu.load_state(state_path)
+    emu.tick(10)
+    pos_restored = read_player_position(emu)
+    assert pos_restored == pos_before
+    
+    emu.close()
+
+
+def test_empty_party_slot():
+    """Test reading empty party slot."""
+    emu = GameBoyEmulator("roms/pokemon-blue.gb", headless=True)
+    save_path = Path(__file__).parent / "fixtures" / "bulbasaur.state"
+    emu.load_state(str(save_path))
+    emu.tick(60)
+    
+    # Slot 0 has Bulbasaur, slot 1 should be empty
+    pokemon = read_party_pokemon(emu, 1)
+    assert pokemon is None
+    
+    emu.close()
+
+
+def test_pokedex_owned():
+    """Test Pokédex owned check."""
+    emu = GameBoyEmulator("roms/pokemon-blue.gb", headless=True)
+    save_path = Path(__file__).parent / "fixtures" / "bulbasaur.state"
+    emu.load_state(str(save_path))
+    emu.tick(60)
+    
+    # Count owned
+    count = read_pokedex_owned_count(emu)
+    assert count >= 1  # At least Bulbasaur
+    
+    # Should have Bulbasaur (#1)
+    assert is_pokemon_owned(emu, 1)
+    
+    # Should not have Mew (#151)
+    assert not is_pokemon_owned(emu, 151)
+    
+    # Test invalid number
+    with pytest.raises(ValueError):
+        is_pokemon_owned(emu, 0)
+    
+    with pytest.raises(ValueError):
+        is_pokemon_owned(emu, 152)
+    
+    emu.close()
+
+
+def test_collision_without_wrapper():
+    """Test collision detection fallback."""
+    emu = GameBoyEmulator("roms/pokemon-blue.gb", headless=True)
+    
+    # Force game_wrapper to None
+    emu.game_wrapper = None
+    
+    collision = emu.get_walkable_matrix()
+    assert collision.shape == (18, 20)
+    assert np.all(collision == 0)
+    
+    emu.close()
