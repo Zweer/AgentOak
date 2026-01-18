@@ -1,0 +1,357 @@
+{
+  "_meta": {
+    "description": "Evolution requirements for all 151 Pokemon in Generation 1",
+    "purpose": "Guide bot on how to evolve each Pokemon",
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_evolution_family",
+      "https://pokemondb.net/evolution"
+    ],
+    "lastUpdated": "2026-01-18",
+    "notes": "Gen 1 only has level-up, stone, and trade evolutions"
+  },
+  
+  "evolution_methods": {
+    "level": "Pokemon evolves when reaching specific level",
+    "stone": "Pokemon evolves when exposed to evolution stone",
+    "trade": "Pokemon evolves when traded to another player",
+    "trade_item": "Pokemon evolves when traded while holding specific item (Gen 2+, not in Gen 1)"
+  },
+  
+  "level_evolutions": [
+    {"from": 1, "name": "Bulbasaur", "to": 2, "level": 16},
+    {"from": 2, "name": "Ivysaur", "to": 3, "level": 32},
+    {"from": 4, "name": "Charmander", "to": 5, "level": 16},
+    {"from": 5, "name": "Charmeleon", "to": 6, "level": 36},
+    {"from": 7, "name": "Squirtle", "to": 8, "level": 16},
+    {"from": 8, "name": "Wartortle", "to": 9, "level": 36},
+    {"from": 10, "name": "Caterpie", "to": 11, "level": 7},
+    {"from": 11, "name": "Metapod", "to": 12, "level": 10},
+    {"from": 13, "name": "Weedle", "to": 14, "level": 7},
+    {"from": 14, "name": "Kakuna", "to": 15, "level": 10},
+    {"from": 16, "name": "Pidgey", "to": 17, "level": 18},
+    {"from": 17, "name": "Pidgeotto", "to": 18, "level": 36},
+    {"from": 19, "name": "Rattata", "to": 20, "level": 20},
+    {"from": 21, "name": "Spearow", "to": 22, "level": 20},
+    {"from": 23, "name": "Ekans", "to": 24, "level": 22},
+    {"from": 27, "name": "Sandshrew", "to": 28, "level": 22},
+    {"from": 29, "name": "Nidoran♀", "to": 30, "level": 16},
+    {"from": 32, "name": "Nidoran♂", "to": 33, "level": 16},
+    {"from": 35, "name": "Clefairy", "to": 36, "level": null, "note": "Moon Stone evolution"},
+    {"from": 37, "name": "Vulpix", "to": 38, "level": null, "note": "Fire Stone evolution"},
+    {"from": 39, "name": "Jigglypuff", "to": 40, "level": null, "note": "Moon Stone evolution"},
+    {"from": 41, "name": "Zubat", "to": 42, "level": 22},
+    {"from": 43, "name": "Oddish", "to": 44, "level": 21},
+    {"from": 46, "name": "Paras", "to": 47, "level": 24},
+    {"from": 48, "name": "Venonat", "to": 49, "level": 31},
+    {"from": 50, "name": "Diglett", "to": 51, "level": 26},
+    {"from": 52, "name": "Meowth", "to": 53, "level": 28},
+    {"from": 54, "name": "Psyduck", "to": 55, "level": 33},
+    {"from": 56, "name": "Mankey", "to": 57, "level": 28},
+    {"from": 58, "name": "Growlithe", "to": 59, "level": null, "note": "Fire Stone evolution"},
+    {"from": 60, "name": "Poliwag", "to": 61, "level": 25},
+    {"from": 63, "name": "Abra", "to": 64, "level": 16},
+    {"from": 66, "name": "Machop", "to": 67, "level": 28},
+    {"from": 69, "name": "Bellsprout", "to": 70, "level": 21},
+    {"from": 72, "name": "Tentacool", "to": 73, "level": 30},
+    {"from": 74, "name": "Geodude", "to": 75, "level": 25},
+    {"from": 77, "name": "Ponyta", "to": 78, "level": 40},
+    {"from": 79, "name": "Slowpoke", "to": 80, "level": 37},
+    {"from": 81, "name": "Magnemite", "to": 82, "level": 30},
+    {"from": 84, "name": "Doduo", "to": 85, "level": 31},
+    {"from": 86, "name": "Seel", "to": 87, "level": 34},
+    {"from": 88, "name": "Grimer", "to": 89, "level": 38},
+    {"from": 90, "name": "Shellder", "to": 91, "level": null, "note": "Water Stone evolution"},
+    {"from": 92, "name": "Gastly", "to": 93, "level": 25},
+    {"from": 96, "name": "Drowzee", "to": 97, "level": 26},
+    {"from": 98, "name": "Krabby", "to": 99, "level": 28},
+    {"from": 100, "name": "Voltorb", "to": 101, "level": 30},
+    {"from": 102, "name": "Exeggcute", "to": 103, "level": null, "note": "Leaf Stone evolution"},
+    {"from": 104, "name": "Cubone", "to": 105, "level": 28},
+    {"from": 108, "name": "Lickitung", "to": null, "level": null, "note": "No evolution in Gen 1"},
+    {"from": 109, "name": "Koffing", "to": 110, "level": 35},
+    {"from": 111, "name": "Rhyhorn", "to": 112, "level": 42},
+    {"from": 116, "name": "Horsea", "to": 117, "level": 32},
+    {"from": 118, "name": "Goldeen", "to": 119, "level": 33},
+    {"from": 120, "name": "Staryu", "to": 121, "level": null, "note": "Water Stone evolution"},
+    {"from": 129, "name": "Magikarp", "to": 130, "level": 20},
+    {"from": 133, "name": "Eevee", "to": [134, 135, 136], "level": null, "note": "Stone evolutions"},
+    {"from": 138, "name": "Omanyte", "to": 139, "level": 40},
+    {"from": 140, "name": "Kabuto", "to": 141, "level": 40},
+    {"from": 147, "name": "Dratini", "to": 148, "level": 30},
+    {"from": 148, "name": "Dragonair", "to": 149, "level": 55}
+  ],
+  
+  "stone_evolutions": [
+    {
+      "from": 30,
+      "name": "Nidorina",
+      "to": 31,
+      "stone": "Moon Stone",
+      "result": "Nidoqueen"
+    },
+    {
+      "from": 33,
+      "name": "Nidorino",
+      "to": 34,
+      "stone": "Moon Stone",
+      "result": "Nidoking"
+    },
+    {
+      "from": 35,
+      "name": "Clefairy",
+      "to": 36,
+      "stone": "Moon Stone",
+      "result": "Clefable"
+    },
+    {
+      "from": 37,
+      "name": "Vulpix",
+      "to": 38,
+      "stone": "Fire Stone",
+      "result": "Ninetales"
+    },
+    {
+      "from": 39,
+      "name": "Jigglypuff",
+      "to": 40,
+      "stone": "Moon Stone",
+      "result": "Wigglytuff"
+    },
+    {
+      "from": 44,
+      "name": "Gloom",
+      "to": 45,
+      "stone": "Leaf Stone",
+      "result": "Vileplume"
+    },
+    {
+      "from": 58,
+      "name": "Growlithe",
+      "to": 59,
+      "stone": "Fire Stone",
+      "result": "Arcanine"
+    },
+    {
+      "from": 61,
+      "name": "Poliwhirl",
+      "to": 62,
+      "stone": "Water Stone",
+      "result": "Poliwrath"
+    },
+    {
+      "from": 70,
+      "name": "Weepinbell",
+      "to": 71,
+      "stone": "Leaf Stone",
+      "result": "Victreebel"
+    },
+    {
+      "from": 90,
+      "name": "Shellder",
+      "to": 91,
+      "stone": "Water Stone",
+      "result": "Cloyster"
+    },
+    {
+      "from": 102,
+      "name": "Exeggcute",
+      "to": 103,
+      "stone": "Leaf Stone",
+      "result": "Exeggutor"
+    },
+    {
+      "from": 120,
+      "name": "Staryu",
+      "to": 121,
+      "stone": "Water Stone",
+      "result": "Starmie"
+    },
+    {
+      "from": 133,
+      "name": "Eevee",
+      "to": 134,
+      "stone": "Water Stone",
+      "result": "Vaporeon"
+    },
+    {
+      "from": 133,
+      "name": "Eevee",
+      "to": 135,
+      "stone": "Thunder Stone",
+      "result": "Jolteon"
+    },
+    {
+      "from": 133,
+      "name": "Eevee",
+      "to": 136,
+      "stone": "Fire Stone",
+      "result": "Flareon"
+    },
+    {
+      "from": 25,
+      "name": "Pikachu",
+      "to": 26,
+      "stone": "Thunder Stone",
+      "result": "Raichu",
+      "note": "Don't evolve Pikachu in Yellow if you want it to follow you!"
+    }
+  ],
+  
+  "trade_evolutions": [
+    {
+      "from": 64,
+      "name": "Kadabra",
+      "to": 65,
+      "result": "Alakazam",
+      "method": "Trade",
+      "notes": "Must trade to another player, then trade back"
+    },
+    {
+      "from": 67,
+      "name": "Machoke",
+      "to": 68,
+      "result": "Machamp",
+      "method": "Trade",
+      "notes": "Must trade to another player, then trade back"
+    },
+    {
+      "from": 75,
+      "name": "Graveler",
+      "to": 76,
+      "result": "Golem",
+      "method": "Trade",
+      "notes": "Must trade to another player, then trade back"
+    },
+    {
+      "from": 93,
+      "name": "Haunter",
+      "to": 94,
+      "result": "Gengar",
+      "method": "Trade",
+      "notes": "Must trade to another player, then trade back"
+    }
+  ],
+  
+  "no_evolution": [
+    83, 113, 114, 115, 122, 123, 124, 125, 126, 127, 128, 131, 132, 137, 142, 143, 144, 145, 146, 150, 151
+  ],
+  
+  "evolution_stones": {
+    "Moon Stone": {
+      "locations": [
+        "Mt. Moon (hidden)",
+        "Rocket Hideout B1F (hidden)",
+        "Pokemon Mansion 1F",
+        "Celadon Department Store (2100)"
+      ],
+      "evolves": ["Nidorina", "Nidorino", "Clefairy", "Jigglypuff"],
+      "total_available": 4,
+      "notes": "Limited quantity, plan usage carefully"
+    },
+    "Fire Stone": {
+      "locations": [
+        "Celadon Department Store (2100)",
+        "Pokemon Mansion B1F"
+      ],
+      "evolves": ["Vulpix", "Growlithe", "Eevee"],
+      "total_available": 2,
+      "notes": "Can buy unlimited from Celadon"
+    },
+    "Thunder Stone": {
+      "locations": [
+        "Celadon Department Store (2100)",
+        "Power Plant"
+      ],
+      "evolves": ["Pikachu", "Eevee"],
+      "total_available": 2,
+      "notes": "Can buy unlimited from Celadon"
+    },
+    "Water Stone": {
+      "locations": [
+        "Celadon Department Store (2100)"
+      ],
+      "evolves": ["Poliwhirl", "Shellder", "Staryu", "Eevee"],
+      "total_available": "Unlimited (can buy)",
+      "notes": "Can buy unlimited from Celadon"
+    },
+    "Leaf Stone": {
+      "locations": [
+        "Celadon Department Store (2100)"
+      ],
+      "evolves": ["Gloom", "Weepinbell", "Exeggcute"],
+      "total_available": "Unlimited (can buy)",
+      "notes": "Can buy unlimited from Celadon"
+    }
+  },
+  
+  "evolution_priority": {
+    "high_priority": [
+      {
+        "pokemon": "Magikarp",
+        "reason": "Evolves into Gyarados (very strong) at Lv20",
+        "when": "As soon as possible"
+      },
+      {
+        "pokemon": "Eevee",
+        "reason": "Choose evolution based on team needs",
+        "when": "After getting evolution stones from Celadon",
+        "recommendation": "Vaporeon or Jolteon (both better than Flareon)"
+      },
+      {
+        "pokemon": "Kadabra",
+        "reason": "Alakazam is strongest Psychic-type",
+        "when": "After reaching Lv16, trade immediately"
+      },
+      {
+        "pokemon": "Haunter",
+        "reason": "Gengar is only Ghost-type evolution",
+        "when": "After reaching Lv25, trade immediately"
+      }
+    ],
+    "medium_priority": [
+      {
+        "pokemon": "Machoke",
+        "reason": "Machamp is strongest Fighting-type",
+        "when": "After reaching Lv28"
+      },
+      {
+        "pokemon": "Graveler",
+        "reason": "Golem has high Attack and Defense",
+        "when": "After reaching Lv25"
+      },
+      {
+        "pokemon": "Nidorina/Nidorino",
+        "reason": "Nidoqueen/Nidoking are strong",
+        "when": "After learning good moves (around Lv23)"
+      }
+    ],
+    "low_priority": [
+      {
+        "pokemon": "Pikachu",
+        "reason": "Raichu is stronger but loses cuteness",
+        "when": "Optional, Pikachu is fine without evolving",
+        "note": "In Yellow, Pikachu won't follow you if evolved!"
+      }
+    ]
+  },
+  
+  "evolution_tips": {
+    "delay_stone_evolutions": "Pokemon that evolve with stones stop learning moves! Delay evolution until they learn desired moves.",
+    "trade_evolutions_require_partner": "Need another game instance or player to trade with. Plan ahead.",
+    "moon_stone_scarcity": "Only 4 Moon Stones available without duplication glitch. Prioritize: Nidorina/Nidorino > Clefairy > Jigglypuff",
+    "eevee_choice": "Can only get one Eevee per save. Choose evolution wisely: Vaporeon (Water), Jolteon (Electric), or Flareon (Fire)",
+    "fossil_pokemon": "Omanyte and Kabuto evolve at Lv40 (very late). Plan for long-term training."
+  },
+  
+  "bot_strategy": {
+    "level_evolutions": "Automatic - just level up to required level",
+    "stone_evolutions": "Buy stones from Celadon Department Store (except Moon Stone - limited)",
+    "trade_evolutions": "Requires second game instance. Trade between Red/Blue instances.",
+    "moon_stone_usage": [
+      "Use on Nidorina/Nidorino first (strongest)",
+      "Use on Clefairy second (useful Fairy-type)",
+      "Save remaining for Jigglypuff if needed",
+      "Or use item duplication glitch to get unlimited"
+    ]
+  }
+}

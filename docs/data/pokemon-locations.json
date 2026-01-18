@@ -1,0 +1,194 @@
+{
+  "_meta": {
+    "description": "Pokemon locations for all 151 Pokemon in Red/Blue/Yellow",
+    "purpose": "Guide bot on where to find each Pokemon",
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_availability",
+      "https://pokemondb.net/location"
+    ],
+    "lastUpdated": "2026-01-18",
+    "notes": "Focuses on primary locations and catch methods"
+  },
+  
+  "starters": [
+    {"id": 1, "name": "Bulbasaur", "method": "Starter choice", "location": "Pallet Town (Professor Oak's Lab)"},
+    {"id": 4, "name": "Charmander", "method": "Starter choice", "location": "Pallet Town (Professor Oak's Lab)"},
+    {"id": 7, "name": "Squirtle", "method": "Starter choice", "location": "Pallet Town (Professor Oak's Lab)"}
+  ],
+  
+  "gift_pokemon": [
+    {"id": 25, "name": "Pikachu", "method": "Starter (Yellow only)", "location": "Pallet Town"},
+    {"id": 106, "name": "Hitmonlee", "method": "Gift (choice)", "location": "Saffron City (Fighting Dojo)"},
+    {"id": 107, "name": "Hitmonchan", "method": "Gift (choice)", "location": "Saffron City (Fighting Dojo)"},
+    {"id": 131, "name": "Lapras", "method": "Gift", "location": "Silph Co. 7F"},
+    {"id": 133, "name": "Eevee", "method": "Gift", "location": "Celadon Mansion 3F"},
+    {"id": 138, "name": "Omanyte", "method": "Fossil revival", "location": "Cinnabar Lab (Helix Fossil from Mt. Moon)"},
+    {"id": 140, "name": "Kabuto", "method": "Fossil revival", "location": "Cinnabar Lab (Dome Fossil from Mt. Moon)"},
+    {"id": 142, "name": "Aerodactyl", "method": "Fossil revival", "location": "Cinnabar Lab (Old Amber from Pewter Museum)"}
+  ],
+  
+  "legendary_pokemon": [
+    {"id": 144, "name": "Articuno", "method": "Static encounter", "location": "Seafoam Islands B4F", "level": 50},
+    {"id": 145, "name": "Zapdos", "method": "Static encounter", "location": "Power Plant", "level": 50},
+    {"id": 146, "name": "Moltres", "method": "Static encounter", "location": "Victory Road", "level": 50},
+    {"id": 150, "name": "Mewtwo", "method": "Static encounter", "location": "Cerulean Cave B1F", "level": 70},
+    {"id": 151, "name": "Mew", "method": "Glitch only", "location": "Trainer-Fly glitch (Route 8)", "level": 7}
+  ],
+  
+  "game_corner_only": [
+    {"id": 137, "name": "Porygon", "method": "Game Corner prize", "location": "Celadon Prize Corner", "cost": "9999 coins"}
+  ],
+  
+  "safari_zone_rare": [
+    {"id": 113, "name": "Chansey", "location": "Safari Zone Area 2", "rate": "4%"},
+    {"id": 115, "name": "Kangaskhan", "location": "Safari Zone Area 3", "rate": "5%"},
+    {"id": 123, "name": "Scyther", "location": "Safari Zone Area 3 (Red only)", "rate": "4%"},
+    {"id": 127, "name": "Pinsir", "location": "Safari Zone Area 3 (Blue only)", "rate": "5%"},
+    {"id": 128, "name": "Tauros", "location": "Safari Zone Area 3", "rate": "5%"},
+    {"id": 147, "name": "Dratini", "location": "Safari Zone Area 3 (Fishing, Super Rod)", "rate": "1%"}
+  ],
+  
+  "version_exclusives_red": [
+    {"id": 23, "name": "Ekans", "locations": ["Route 4", "Route 8", "Route 9", "Route 10", "Route 11", "Route 23"]},
+    {"id": 43, "name": "Oddish", "locations": ["Route 5-7", "Route 12-15", "Route 24-25"]},
+    {"id": 56, "name": "Mankey", "locations": ["Route 3", "Route 4", "Route 22", "Route 23"]},
+    {"id": 58, "name": "Growlithe", "locations": ["Route 7", "Route 8", "Pokemon Mansion"]},
+    {"id": 123, "name": "Scyther", "locations": ["Safari Zone Area 3", "Game Corner (5500 coins)"]},
+    {"id": 125, "name": "Electabuzz", "locations": ["Power Plant"]}
+  ],
+  
+  "version_exclusives_blue": [
+    {"id": 27, "name": "Sandshrew", "locations": ["Route 3", "Route 4", "Route 8-11", "Route 23"]},
+    {"id": 37, "name": "Vulpix", "locations": ["Route 7", "Route 8", "Pokemon Mansion"]},
+    {"id": 52, "name": "Meowth", "locations": ["Route 5-8"]},
+    {"id": 69, "name": "Bellsprout", "locations": ["Route 5-7", "Route 12-15", "Route 24-25"]},
+    {"id": 126, "name": "Magmar", "locations": ["Pokemon Mansion"]},
+    {"id": 127, "name": "Pinsir", "locations": ["Safari Zone Area 3", "Game Corner (2500 coins)"]}
+  ],
+  
+  "trade_evolutions_only": [
+    {"id": 65, "name": "Alakazam", "method": "Trade Kadabra"},
+    {"id": 68, "name": "Machamp", "method": "Trade Machoke"},
+    {"id": 76, "name": "Golem", "method": "Trade Graveler"},
+    {"id": 94, "name": "Gengar", "method": "Trade Haunter"}
+  ],
+  
+  "in_game_trades": [
+    {"id": 26, "name": "Raichu", "trade_for": "Electrode", "location": "Cinnabar Lab", "nickname": "Doris"},
+    {"id": 30, "name": "Nidorino", "trade_for": "Nidorina", "location": "Route 11 Gate", "nickname": "Terry"},
+    {"id": 61, "name": "Poliwhirl", "trade_for": "Jynx", "location": "Cerulean City", "nickname": "Lola"},
+    {"id": 83, "name": "Farfetch'd", "trade_for": "Spearow", "location": "Vermilion City", "nickname": "Dux"},
+    {"id": 114, "name": "Tangela", "trade_for": "Venonat", "location": "Cinnabar Lab", "nickname": "Crinkles"},
+    {"id": 122, "name": "Mr. Mime", "trade_for": "Abra", "location": "Route 2", "nickname": "Marcel"},
+    {"id": 124, "name": "Jynx", "trade_for": "Poliwhirl", "location": "Cerulean City", "nickname": "Lola"}
+  ],
+  
+  "common_locations": {
+    "early_game": [
+      {"id": 16, "name": "Pidgey", "locations": ["Route 1-8", "Route 12-15", "Route 24-25"]},
+      {"id": 19, "name": "Rattata", "locations": ["Route 1-8", "Route 9-10", "Route 16-18"]},
+      {"id": 21, "name": "Spearow", "locations": ["Route 3", "Route 4", "Route 9-11", "Route 16-18", "Route 22-23"]},
+      {"id": 41, "name": "Zubat", "locations": ["Mt. Moon", "Rock Tunnel", "Seafoam Islands", "Victory Road"]}
+    ],
+    "mid_game": [
+      {"id": 74, "name": "Geodude", "locations": ["Mt. Moon", "Rock Tunnel", "Victory Road"]},
+      {"id": 66, "name": "Machop", "locations": ["Rock Tunnel", "Victory Road"]},
+      {"id": 92, "name": "Gastly", "locations": ["Pokemon Tower"]},
+      {"id": 100, "name": "Voltorb", "locations": ["Route 10", "Power Plant"]}
+    ],
+    "water_pokemon": [
+      {"id": 54, "name": "Psyduck", "locations": ["Route 24-25", "Cerulean Cave (Surf)"]},
+      {"id": 60, "name": "Poliwag", "locations": ["Route 22-23", "Route 25 (Fishing)"]},
+      {"id": 72, "name": "Tentacool", "locations": ["All water routes (Surf)"]},
+      {"id": 98, "name": "Krabby", "locations": ["All water routes (Fishing)"]},
+      {"id": 116, "name": "Horsea", "locations": ["All water routes (Fishing, Good Rod)"]},
+      {"id": 118, "name": "Goldeen", "locations": ["All water routes (Fishing)"]},
+      {"id": 129, "name": "Magikarp", "locations": ["All water (Old Rod)"]}
+    ]
+  },
+  
+  "rare_spawns": [
+    {"id": 25, "name": "Pikachu", "location": "Viridian Forest", "rate": "5%", "notes": "Starter in Yellow"},
+    {"id": 35, "name": "Clefairy", "location": "Mt. Moon", "rate": "6%"},
+    {"id": 104, "name": "Cubone", "location": "Pokemon Tower", "rate": "10%"},
+    {"id": 113, "name": "Chansey", "location": "Safari Zone Area 2", "rate": "4%", "notes": "Very rare!"},
+    {"id": 132, "name": "Ditto", "location": "Route 13-15", "rate": "5%", "notes": "Cerulean Cave also"}
+  ],
+  
+  "fishing_only": [
+    {"id": 129, "name": "Magikarp", "rod": "Old Rod", "locations": ["Any water"]},
+    {"id": 116, "name": "Horsea", "rod": "Good Rod", "locations": ["Any water"]},
+    {"id": 117, "name": "Seadra", "rod": "Super Rod", "locations": ["Any water (rare)"]},
+    {"id": 120, "name": "Staryu", "rod": "Super Rod", "locations": ["Any water"]},
+    {"id": 147, "name": "Dratini", "rod": "Super Rod", "locations": ["Safari Zone Area 3 (1%)"]},
+    {"id": 148, "name": "Dragonair", "rod": "Super Rod", "locations": ["Safari Zone Area 3 (very rare)"]}
+  ],
+  
+  "special_notes": {
+    "snorlax": {
+      "id": 143,
+      "name": "Snorlax",
+      "locations": ["Route 12 (sleeping)", "Route 16 (sleeping)"],
+      "count": 2,
+      "notes": "Only 2 in game! Need Poke Flute to wake. Save before encountering!"
+    },
+    "eevee_evolutions": {
+      "vaporeon": {"id": 134, "method": "Water Stone on Eevee"},
+      "jolteon": {"id": 135, "method": "Thunder Stone on Eevee"},
+      "flareon": {"id": 136, "method": "Fire Stone on Eevee"}
+    },
+    "hitmon_choice": {
+      "notes": "Can only get ONE of Hitmonlee or Hitmonchan per save file!",
+      "recommendation": "Choose based on team needs. Both are Fighting-type."
+    },
+    "fossil_choice": {
+      "notes": "Can only get ONE fossil per save file (Helix OR Dome)!",
+      "recommendation": "Choose Helix (Omanyte) for Red, Dome (Kabuto) for Blue to diversify"
+    }
+  },
+  
+  "missable_pokemon": [
+    {
+      "name": "Starters",
+      "pokemon": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      "notes": "Can only get ONE starter line per save. Must trade for others."
+    },
+    {
+      "name": "Eevee",
+      "pokemon": [133, 134, 135, 136],
+      "notes": "Only ONE Eevee per save. Choose evolution carefully!"
+    },
+    {
+      "name": "Fossils",
+      "pokemon": [138, 139, 140, 141],
+      "notes": "Can only get ONE fossil (Helix OR Dome). Must trade for other."
+    },
+    {
+      "name": "Hitmons",
+      "pokemon": [106, 107],
+      "notes": "Can only get ONE (Hitmonlee OR Hitmonchan). Must trade for other."
+    },
+    {
+      "name": "Snorlax",
+      "pokemon": [143],
+      "notes": "Only 2 in game. Don't faint them! Save before encountering."
+    },
+    {
+      "name": "Legendaries",
+      "pokemon": [144, 145, 146, 150],
+      "notes": "Only 1 of each. Save before encountering!"
+    }
+  ],
+  
+  "summary": {
+    "total_pokemon": 151,
+    "catchable_in_wild": 120,
+    "gift_pokemon": 8,
+    "fossil_pokemon": 3,
+    "legendary_pokemon": 5,
+    "trade_only": 4,
+    "version_exclusive": 22,
+    "game_corner_only": 1,
+    "glitch_only": 1
+  }
+}

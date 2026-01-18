@@ -1,0 +1,335 @@
+{
+  "_meta": {
+    "description": "Version-exclusive Pokémon in Red, Blue, and Yellow",
+    "purpose": "Identify which Pokémon require trading between versions",
+    "sources": [
+      "https://bulbapedia.bulbagarden.net/wiki/Version-exclusive_Pok%C3%A9mon",
+      "https://www.ign.com/wikis/pokemon-red-blue-yellow-version/Version_Exclusives"
+    ],
+    "lastUpdated": "2026-01-18",
+    "notes": "Yellow has significant differences from Red/Blue"
+  },
+  
+  "red_only": [
+    {
+      "id": 23,
+      "name": "Ekans",
+      "type": ["Poison"],
+      "locations": ["Route 4", "Route 8", "Route 9", "Route 10", "Route 11", "Route 23"],
+      "evolution": "Arbok at Lv22"
+    },
+    {
+      "id": 24,
+      "name": "Arbok",
+      "type": ["Poison"],
+      "locations": ["Evolve Ekans"],
+      "evolution": "Final form"
+    },
+    {
+      "id": 43,
+      "name": "Oddish",
+      "type": ["Grass", "Poison"],
+      "locations": ["Route 5", "Route 6", "Route 7", "Route 12", "Route 13", "Route 14", "Route 15", "Route 24", "Route 25"],
+      "evolution": "Gloom at Lv21"
+    },
+    {
+      "id": 44,
+      "name": "Gloom",
+      "type": ["Grass", "Poison"],
+      "locations": ["Evolve Oddish"],
+      "evolution": "Vileplume with Leaf Stone"
+    },
+    {
+      "id": 45,
+      "name": "Vileplume",
+      "type": ["Grass", "Poison"],
+      "locations": ["Evolve Gloom with Leaf Stone"],
+      "evolution": "Final form"
+    },
+    {
+      "id": 56,
+      "name": "Mankey",
+      "type": ["Fighting"],
+      "locations": ["Route 3", "Route 4", "Route 22", "Route 23"],
+      "evolution": "Primeape at Lv28"
+    },
+    {
+      "id": 57,
+      "name": "Primeape",
+      "type": ["Fighting"],
+      "locations": ["Evolve Mankey"],
+      "evolution": "Final form"
+    },
+    {
+      "id": 58,
+      "name": "Growlithe",
+      "type": ["Fire"],
+      "locations": ["Route 7", "Route 8", "Pokemon Mansion"],
+      "evolution": "Arcanine with Fire Stone"
+    },
+    {
+      "id": 59,
+      "name": "Arcanine",
+      "type": ["Fire"],
+      "locations": ["Evolve Growlithe with Fire Stone"],
+      "evolution": "Final form"
+    },
+    {
+      "id": 123,
+      "name": "Scyther",
+      "type": ["Bug", "Flying"],
+      "locations": ["Safari Zone", "Game Corner (5500 coins)"],
+      "evolution": "Scizor in Gen 2+ (not available in Gen 1)"
+    },
+    {
+      "id": 125,
+      "name": "Electabuzz",
+      "type": ["Electric"],
+      "locations": ["Power Plant"],
+      "evolution": "Electivire in Gen 4+ (not available in Gen 1)"
+    }
+  ],
+  
+  "blue_only": [
+    {
+      "id": 27,
+      "name": "Sandshrew",
+      "type": ["Ground"],
+      "locations": ["Route 3", "Route 4", "Route 8", "Route 9", "Route 10", "Route 11", "Route 23"],
+      "evolution": "Sandslash at Lv22"
+    },
+    {
+      "id": 28,
+      "name": "Sandslash",
+      "type": ["Ground"],
+      "locations": ["Evolve Sandshrew"],
+      "evolution": "Final form"
+    },
+    {
+      "id": 37,
+      "name": "Vulpix",
+      "type": ["Fire"],
+      "locations": ["Route 7", "Route 8", "Pokemon Mansion"],
+      "evolution": "Ninetales with Fire Stone"
+    },
+    {
+      "id": 38,
+      "name": "Ninetales",
+      "type": ["Fire"],
+      "locations": ["Evolve Vulpix with Fire Stone"],
+      "evolution": "Final form"
+    },
+    {
+      "id": 52,
+      "name": "Meowth",
+      "type": ["Normal"],
+      "locations": ["Route 5", "Route 6", "Route 7", "Route 8"],
+      "evolution": "Persian at Lv28"
+    },
+    {
+      "id": 53,
+      "name": "Persian",
+      "type": ["Normal"],
+      "locations": ["Evolve Meowth"],
+      "evolution": "Final form"
+    },
+    {
+      "id": 69,
+      "name": "Bellsprout",
+      "type": ["Grass", "Poison"],
+      "locations": ["Route 5", "Route 6", "Route 7", "Route 12", "Route 13", "Route 14", "Route 15", "Route 24", "Route 25"],
+      "evolution": "Weepinbell at Lv21"
+    },
+    {
+      "id": 70,
+      "name": "Weepinbell",
+      "type": ["Grass", "Poison"],
+      "locations": ["Evolve Bellsprout"],
+      "evolution": "Victreebel with Leaf Stone"
+    },
+    {
+      "id": 71,
+      "name": "Victreebel",
+      "type": ["Grass", "Poison"],
+      "locations": ["Evolve Weepinbell with Leaf Stone"],
+      "evolution": "Final form"
+    },
+    {
+      "id": 126,
+      "name": "Magmar",
+      "type": ["Fire"],
+      "locations": ["Pokemon Mansion"],
+      "evolution": "Magmortar in Gen 4+ (not available in Gen 1)"
+    },
+    {
+      "id": 127,
+      "name": "Pinsir",
+      "type": ["Bug"],
+      "locations": ["Safari Zone", "Game Corner (2500 coins)"],
+      "evolution": "No evolution"
+    }
+  ],
+  
+  "yellow_only": [
+    {
+      "id": 25,
+      "name": "Pikachu",
+      "type": ["Electric"],
+      "locations": ["Starter Pokemon (gift from Professor Oak)"],
+      "evolution": "Raichu with Thunder Stone",
+      "notes": "In Red/Blue, Pikachu is rare in Viridian Forest (5%)"
+    }
+  ],
+  
+  "yellow_unobtainable": [
+    {
+      "id": 13,
+      "name": "Weedle",
+      "type": ["Bug", "Poison"],
+      "notes": "Available in Red/Blue, not in Yellow"
+    },
+    {
+      "id": 14,
+      "name": "Kakuna",
+      "type": ["Bug", "Poison"],
+      "notes": "Available in Red/Blue, not in Yellow"
+    },
+    {
+      "id": 15,
+      "name": "Beedrill",
+      "type": ["Bug", "Poison"],
+      "notes": "Available in Red/Blue, not in Yellow"
+    },
+    {
+      "id": 23,
+      "name": "Ekans",
+      "type": ["Poison"],
+      "notes": "Red exclusive, not in Yellow"
+    },
+    {
+      "id": 24,
+      "name": "Arbok",
+      "type": ["Poison"],
+      "notes": "Red exclusive, not in Yellow"
+    },
+    {
+      "id": 27,
+      "name": "Sandshrew",
+      "type": ["Ground"],
+      "notes": "Blue exclusive, not in Yellow"
+    },
+    {
+      "id": 28,
+      "name": "Sandslash",
+      "type": ["Ground"],
+      "notes": "Blue exclusive, not in Yellow"
+    },
+    {
+      "id": 37,
+      "name": "Vulpix",
+      "type": ["Fire"],
+      "notes": "Blue exclusive, not in Yellow"
+    },
+    {
+      "id": 38,
+      "name": "Ninetales",
+      "type": ["Fire"],
+      "notes": "Blue exclusive, not in Yellow"
+    },
+    {
+      "id": 52,
+      "name": "Meowth",
+      "type": ["Normal"],
+      "notes": "Blue exclusive, not in Yellow"
+    },
+    {
+      "id": 53,
+      "name": "Persian",
+      "type": ["Normal"],
+      "notes": "Blue exclusive, not in Yellow"
+    },
+    {
+      "id": 58,
+      "name": "Growlithe",
+      "type": ["Fire"],
+      "notes": "Red exclusive, not in Yellow"
+    },
+    {
+      "id": 59,
+      "name": "Arcanine",
+      "type": ["Fire"],
+      "notes": "Red exclusive, not in Yellow"
+    },
+    {
+      "id": 88,
+      "name": "Grimer",
+      "type": ["Poison"],
+      "notes": "Available in Red/Blue, not in Yellow"
+    },
+    {
+      "id": 89,
+      "name": "Muk",
+      "type": ["Poison"],
+      "notes": "Available in Red/Blue, not in Yellow"
+    },
+    {
+      "id": 109,
+      "name": "Koffing",
+      "type": ["Poison"],
+      "notes": "Available in Red/Blue, not in Yellow"
+    },
+    {
+      "id": 110,
+      "name": "Weezing",
+      "type": ["Poison"],
+      "notes": "Available in Red/Blue, not in Yellow"
+    },
+    {
+      "id": 124,
+      "name": "Jynx",
+      "type": ["Ice", "Psychic"],
+      "notes": "Available in Red/Blue (in-game trade), not in Yellow"
+    },
+    {
+      "id": 125,
+      "name": "Electabuzz",
+      "type": ["Electric"],
+      "notes": "Red exclusive, not in Yellow"
+    },
+    {
+      "id": 126,
+      "name": "Magmar",
+      "type": ["Fire"],
+      "notes": "Blue exclusive, not in Yellow"
+    }
+  ],
+  
+  "trade_requirements": {
+    "red_to_blue": {
+      "description": "Pokemon that Red players need from Blue players",
+      "pokemon": [27, 28, 37, 38, 52, 53, 69, 70, 71, 126, 127]
+    },
+    "blue_to_red": {
+      "description": "Pokemon that Blue players need from Red players",
+      "pokemon": [23, 24, 43, 44, 45, 56, 57, 58, 59, 123, 125]
+    },
+    "yellow_needs": {
+      "description": "Pokemon that Yellow players need from Red/Blue",
+      "pokemon": [13, 14, 15, 23, 24, 27, 28, 37, 38, 52, 53, 58, 59, 88, 89, 109, 110, 124, 125, 126]
+    }
+  },
+  
+  "summary": {
+    "red_exclusives": 11,
+    "blue_exclusives": 11,
+    "yellow_exclusives": 1,
+    "yellow_unobtainable": 20,
+    "total_version_exclusives": 22,
+    "notes": [
+      "Red and Blue have 11 exclusive Pokemon each (22 total)",
+      "Yellow has Pikachu as starter (exclusive), but lacks 20 Pokemon from Red/Blue",
+      "To complete Pokedex in Red/Blue, must trade between versions",
+      "To complete Pokedex in Yellow, must trade with both Red AND Blue"
+    ]
+  }
+}
