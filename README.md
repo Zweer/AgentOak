@@ -30,8 +30,8 @@ AgentOak uses:
 - ~500MB RAM per emulator instance
 
 ### Files (not included)
-- `roms/pokemon_blue.gb` - Pokémon Blue ROM (SHA1: `d7037c83e1ae5b39bde3c30787637ba1d4c48ce2`)
-- `roms/pokemon_red.gb` - Pokémon Red ROM (SHA1: `ea9bcae617fdf159b045185467ae58b2e4a48b9a`)
+- `roms/pokemon-blue.gb` - Pokémon Blue ROM (SHA1: `d7037c83e1ae5b39bde3c30787637ba1d4c48ce2`)
+- `roms/pokemon-red.gb` - Pokémon Red ROM (SHA1: `ea9bcae617fdf159b045185467ae58b2e4a48b9a`)
 
 ### Python Dependencies
 ```

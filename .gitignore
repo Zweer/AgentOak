@@ -35,6 +35,8 @@ env/
 # ROMs (user must provide)
 roms/*.gb
 roms/*.gbc
+# Battery saves (in-game saves)
+roms/*.ram
 
 # Save states
 saves/*.state
