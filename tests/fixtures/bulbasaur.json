@@ -1,0 +1,48 @@
+{
+  "description": "Starter Bulbasaur in Oak's Lab",
+  "player": {
+    "map_id": 40,
+    "map_name": "Oak's Lab",
+    "x": 5,
+    "y": 6,
+    "badges": 0
+  },
+  "party": [
+    {
+      "species_id": 153,
+      "name": "Bulbasaur",
+      "level": 5,
+      "current_hp": 21,
+      "max_hp": 21,
+      "attack": 10,
+      "defense": 10,
+      "speed": 10,
+      "special": 12,
+      "moves": [
+        33,
+        45,
+        0,
+        0
+      ],
+      "move_names": [
+        "Tackle",
+        "Growl",
+        null,
+        null
+      ],
+      "ivs": {
+        "attack": 3,
+        "defense": 5,
+        "speed": 9,
+        "special": 13
+      }
+    }
+  ],
+  "pokedex": {
+    "owned": 1
+  },
+  "collision": {
+    "has_walkable_tiles": true,
+    "has_blocked_tiles": true
+  }
+}

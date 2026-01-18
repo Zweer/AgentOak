@@ -1,0 +1,67 @@
+"""Map data for Pokémon Red/Blue."""
+
+# Map names by ID
+# Source: https://bulbapedia.bulbagarden.net/wiki/List_of_locations_by_index_number_(Generation_I)
+MAP_NAMES = {
+    0: "Pallet Town",
+    1: "Viridian City",
+    2: "Pewter City",
+    3: "Cerulean City",
+    4: "Lavender Town",
+    5: "Vermilion City",
+    6: "Celadon City",
+    7: "Fuchsia City",
+    8: "Cinnabar Island",
+    9: "Indigo Plateau",
+    10: "Saffron City",
+    11: "Route 1",
+    12: "Route 2",
+    13: "Route 3",
+    14: "Route 4",
+    15: "Route 5",
+    16: "Route 6",
+    17: "Route 7",
+    18: "Route 8",
+    19: "Route 9",
+    20: "Route 10",
+    21: "Route 11",
+    22: "Route 12",
+    23: "Route 13",
+    24: "Route 14",
+    25: "Route 15",
+    26: "Route 16",
+    27: "Route 17",
+    28: "Route 18",
+    29: "Route 19",
+    30: "Route 20",
+    31: "Route 21",
+    32: "Route 22",
+    33: "Route 23",
+    34: "Route 24",
+    35: "Route 25",
+    37: "Red's House (1F)",
+    38: "Red's House (2F)",
+    39: "Blue's House",
+    40: "Oak's Lab",
+    41: "Viridian Pokémon Center",
+    42: "Viridian Mart",
+    43: "Trainer School",
+    44: "Viridian House 1",
+    45: "Viridian House 2",
+    46: "Viridian Gym",
+    47: "Diglett's Cave (Route 2)",
+    48: "Viridian Forest",
+    49: "Pewter Museum (1F)",
+    50: "Pewter Museum (2F)",
+    51: "Pewter Gym",
+    52: "Pewter House 1",
+    53: "Pewter House 2",
+    54: "Pewter Pokémon Center",
+    55: "Pewter Mart",
+    # ... (we can add more as needed)
+}
+
+
+def get_map_name(map_id: int) -> str:
+    """Get map name from ID."""
+    return MAP_NAMES.get(map_id, f"Unknown Map #{map_id}")

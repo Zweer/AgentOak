@@ -1,12 +1,107 @@
 """Memory reading utilities for Pokémon Red/Blue."""
 
+from dataclasses import dataclass
+
 from agentoak.emulator import GameBoyEmulator
 from agentoak.memory import addresses
+
+
+@dataclass
+class PartyPokemon:
+    """Data for a Pokémon in the party."""
+    species_id: int
+    level: int
+    current_hp: int
+    max_hp: int
+    attack: int
+    defense: int
+    speed: int
+    special: int
+    moves: list[int]  # List of 4 move IDs
+    # IVs (Individual Values, 0-15 each)
+    attack_iv: int
+    defense_iv: int
+    speed_iv: int
+    special_iv: int
 
 
 def read_party_count(emulator: GameBoyEmulator) -> int:
     """Read number of Pokémon in party."""
     return emulator.read_memory(addresses.PARTY_COUNT)[0]
+
+
+def read_party_pokemon(emulator: GameBoyEmulator, slot: int) -> PartyPokemon | None:
+    """Read Pokémon data from party slot (0-5).
+    
+    Args:
+        emulator: GameBoy emulator instance
+        slot: Party slot (0-5)
+        
+    Returns:
+        PartyPokemon or None if slot is empty
+    """
+    party_count = read_party_count(emulator)
+    if slot >= party_count:
+        return None
+    
+    # Each Pokémon is 44 bytes
+    base_addr = addresses.PARTY_DATA_START + (slot * 44)
+    
+    # Read Pokémon data structure
+    data = emulator.read_memory(base_addr, 44)
+    
+    species_id = data[addresses.POKEMON_SPECIES]
+    current_hp = (data[addresses.POKEMON_HP_CURRENT] << 8) | data[addresses.POKEMON_HP_CURRENT + 1]
+    level = data[addresses.POKEMON_LEVEL]
+    max_hp = (data[addresses.POKEMON_HP_MAX] << 8) | data[addresses.POKEMON_HP_MAX + 1]
+    attack = (data[addresses.POKEMON_ATTACK] << 8) | data[addresses.POKEMON_ATTACK + 1]
+    defense = (data[addresses.POKEMON_DEFENSE] << 8) | data[addresses.POKEMON_DEFENSE + 1]
+    speed = (data[addresses.POKEMON_SPEED] << 8) | data[addresses.POKEMON_SPEED + 1]
+    special = (data[addresses.POKEMON_SPECIAL] << 8) | data[addresses.POKEMON_SPECIAL + 1]
+    
+    moves = [
+        data[addresses.POKEMON_MOVE1],
+        data[addresses.POKEMON_MOVE2],
+        data[addresses.POKEMON_MOVE3],
+        data[addresses.POKEMON_MOVE4],
+    ]
+    
+    # IVs are stored at offset 0x1B and 0x1C (27 and 28)
+    # Format: AAAA DDDD SSSS SSSS (Attack, Defense, Speed, Special)
+    # Each IV is 4 bits (0-15)
+    iv_byte1 = data[0x1B]  # Attack (high 4 bits) + Defense (low 4 bits)
+    iv_byte2 = data[0x1C]  # Speed (high 4 bits) + Special (low 4 bits)
+    
+    attack_iv = (iv_byte1 >> 4) & 0xF
+    defense_iv = iv_byte1 & 0xF
+    speed_iv = (iv_byte2 >> 4) & 0xF
+    special_iv = iv_byte2 & 0xF
+    
+    return PartyPokemon(
+        species_id=species_id,
+        level=level,
+        current_hp=current_hp,
+        max_hp=max_hp,
+        attack=attack,
+        defense=defense,
+        speed=speed,
+        special=special,
+        moves=moves,
+        attack_iv=attack_iv,
+        defense_iv=defense_iv,
+        speed_iv=speed_iv,
+        special_iv=special_iv,
+    )
+
+
+def read_full_party(emulator: GameBoyEmulator) -> list[PartyPokemon]:
+    """Read all Pokémon in party."""
+    party_count = read_party_count(emulator)
+    return [
+        read_party_pokemon(emulator, i)
+        for i in range(party_count)
+        if read_party_pokemon(emulator, i) is not None
+    ]
 
 
 def read_pokedex_owned_count(emulator: GameBoyEmulator) -> int:

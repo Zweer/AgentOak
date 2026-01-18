@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Literal
 
 import numpy as np
+from PIL import Image
 from pyboy import PyBoy
 
 
@@ -61,6 +62,19 @@ class GameBoyEmulator:
             Bytes read from memory
         """
         return bytes(self.pyboy.memory[address:address + length])
+    
+    def get_screen_array(self) -> np.ndarray:
+        """Get screen as numpy array (160x144x3 RGB)."""
+        return np.array(self.pyboy.screen.ndarray)
+    
+    def get_screen_image(self) -> Image.Image:
+        """Get screen as PIL Image."""
+        return Image.fromarray(self.get_screen_array())
+    
+    def save_screenshot(self, path: str | Path) -> None:
+        """Save screenshot to file."""
+        img = self.get_screen_image()
+        img.save(path)
     
     def get_walkable_matrix(self) -> np.ndarray:
         """Get walkable tiles matrix for current screen.

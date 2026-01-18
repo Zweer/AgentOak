@@ -12,13 +12,13 @@ install:
 		echo "⚠️  uv not found, installing..."; \
 		curl -LsSf https://astral.sh/uv/install.sh | sh; \
 	}
-	@uv sync
+	@uv sync --extra dev
 
 lint:
 	@echo "🔍 Running ruff check..."
-	@uv run ruff check --fix agentoak
+	@uv run ruff check --fix agentoak tests
 	@echo "✨ Running ruff format..."
-	@uv run ruff format agentoak
+	@uv run ruff format agentoak tests
 
 test:
 	@echo "🧪 Running tests..."

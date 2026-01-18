@@ -53,5 +53,8 @@ screenshots/
 .coverage
 htmlcov/
 
+# Test fixtures (keep the directory structure but ignore generated files)
+tests/fixtures/*.state.tmp
+
 # mypy
 .mypy_cache/
